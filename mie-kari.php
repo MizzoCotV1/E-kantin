@@ -36,17 +36,26 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/indomie/mie-rendang.jpg" alt="">
+                                src="img/product/indomie/mie-kari.jpg" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/indomie/mie-soto-s.jpg"
-                                src="img/product/indomie/mie-soto-s.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="img/product/details/thumb-3.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+
+                            <a href="mie-soto.php">
+                            <img href =""data-imgbigurl="img/product/indomie/mie-soto-s.jpg"
+                                src="img/product/indomie/mie-soto-s.jpg" alt=""></a>
+
+                                <a href="mie-rendang.php">
+                            <img data-imgbigurl="img/product/indomie/mie-rendang.jpg"
+                                src="img/product/indomie/mie-rendang.jpg" alt=""></a>
+
+                            <a href="mie-goreng.php">
+                            <img data-imgbigurl="img/product/indomie/mie-goreng.jpg"
+                                src="img/product/indomie/mie-goreng.jpg" alt=""></a>
+
+                            <a href="mie-ayam">
+                            <img data-imgbigurl="img/product/indomie/mie-ayam.jpg"
+                                src="img/product/indomie/mie-ayam.jpg" alt=""></a>
+
                         </div>
                     </div>
                 </div>

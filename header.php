@@ -38,7 +38,7 @@
         </ul>
         <!-- login/logout -->
         <div class="d-flex justify-content-center align-items-center gap-3">
-          <a href="#login" class="text-white px-3 py-1 rounded-3"  style="background-color:#008000" >Login</a>
+          <a href="login.php" class="text-white px-3 py-1 rounded-3"  style="background-color:#008000" >Login</a>
           <a href="#sign up" class="text-white text-decoration-none- px-3 py-1 rounded-3" style="background-color: #008000">Sign Up</a>
         </div>
        

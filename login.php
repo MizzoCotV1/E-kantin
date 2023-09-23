@@ -22,7 +22,7 @@
           </div>
           <a href="#" class="forgot-password">Lupa Password?</a>
           <div class="input-group">
-            <button href="index.php"type="submit">Login</button>
+           <button type="submit">Login</button>
           </div>
         </form>
 
