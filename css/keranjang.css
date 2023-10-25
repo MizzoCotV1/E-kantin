@@ -1,0 +1,11 @@
+.cart-button {
+    width: 200px;
+	height: 200px;
+	background: #dac52c;
+	border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 80px;
+    bottom: 100px;
+    right: 0;
+}
