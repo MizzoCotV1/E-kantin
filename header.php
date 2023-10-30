@@ -27,7 +27,7 @@
             <a class="nav-link active " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link active " aria-current="page" href="shoping-cart.php">Keranjang</a>
+            <a class="nav-link active " aria-current="page" href="cart.php">Keranjang</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link active " aria-current="page" href="#contact">Contact</a>

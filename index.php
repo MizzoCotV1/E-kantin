@@ -27,9 +27,69 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
+    <div class="container m-5 my-5">
+
     </div>
+    <form id="addToCartForm">
+        <input type="hidden" name="id_product" value="123"> <!-- Replace with the actual product ID -->
+        <input type="hidden" name="product_name" value="Product Name"> <!-- Replace with the actual product name -->
+        <input type="hidden" name="quantity" value="1"> <!-- Default quantity -->
+        <input type="hidden" name="price" value="19.99"> <!-- Replace with the actual product price -->
+        <input type="submit" value="Add to Cart">
+    </form>
+    <form id="addToCartForm1">
+        <input type="hidden" name="id_product" value="124"> <!-- Replace with the actual product ID -->
+        <input type="hidden" name="product_name" value="tehjust"> <!-- Replace with the actual product name -->
+        <input type="hidden" name="quantity" value="1"> <!-- Default quantity -->
+        <input type="hidden" name="price" value="1"> <!-- Replace with the actual product price -->
+        <input type="submit" value="Add to Cart">
+    </form>
+    <div id="cartStatus">Cart: Loading...</div>
+
+    <script>
+        document.getElementById("addToCartForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Prepare the data to send to the server
+            const formData = new FormData(this);
+
+            // Make an AJAX POST request to add the item to the cart
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from the server
+                document.getElementById("cartStatus").textContent = 'Cart: ' + data.cartSize;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("addToCartForm1").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Prepare the data to send to the server
+            const formData = new FormData(this);
+
+            // Make an AJAX POST request to add the item to the cart
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from the server
+                document.getElementById("cartStatus").textContent = 'Cart: ' + data.cartSize;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 
    
 
@@ -53,9 +113,45 @@
                 </div>
             </div>
             <div class="row featured__filter">
+            <?php
+                // Include the database connection file
+                include 'conn.php';
+
+                $sql = "SELECT * FROM jual";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">';
+                        echo '<div class="featured__item">';
+                        echo '<div class="featured__item__pic set-bg">';
+                        echo '<a href="' . $row["link_produk"] . '"><img src="' . $row["gambar_path"] . '" alt=""></a>';
+                        echo '<ul class="featured__item__pic__hover">';
+                        echo '<li><a href="#"><i class="fa fa-heart"></i></a></li>';
+                        echo '<li><a href="#"><i class="fa fa-retweet"></i></a></li>';
+                        echo '<li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>';
+                        echo '</ul>';
+                        echo '</div>';
+                        echo "<p class='product-id' style='display: none;'>" . $row["product_id"] . "</p>";
+                        echo '<div class="featured__item__text">';
+                        echo '<h6><a href="">' . $row["nama_produk"] . '</a></h6>';
+                        echo '<h5>Rp ' . $row["harga"] . '</h5>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        // You can include "Add to Cart" buttons here for each product
+                    }
+                } else {
+                    echo "No products found.";
+                }
+
+                // Close the database connection
+                $conn->close();
+                ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/mie.jpg">
+                        <div class="featured__item__pic set-bg">
+                            <a href="mie-rendang.php"><img src="img/featured/mie.jpg" alt=""></a>
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
